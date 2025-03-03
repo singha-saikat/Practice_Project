@@ -1,10 +1,8 @@
-import TravelPlan from "./components/TravelPlan";
+import Accordian from "./components/Accordian";
 
 const App = () => {
   return (
-    <div>
-      <TravelPlan/>
-    </div>
+    <Accordian/>
   );
 };
 
