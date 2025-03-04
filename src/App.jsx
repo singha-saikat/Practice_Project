@@ -1,8 +1,12 @@
-import Accordian from "./components/Accordian";
+import Counter from "./components/Counter";
 
 const App = () => {
+  const counter = <Counter />;
   return (
-    <Accordian/>
+    <div>
+      {counter}
+      {counter}
+    </div>
   );
 };
 
