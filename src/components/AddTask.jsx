@@ -12,8 +12,8 @@ const AddTask = ({ onAdd }) => {
       />
       <button
         onClick={() => {
-          setText("");
-          onAdd(text);
+            setText("");
+            onAdd(text);
         }}
       >
         Add
