@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { TasksDispatchContext } from "../contexts/TaskContexts";
 
-const Task = ({ task, onDelete, onChange }) => {
+const Task = ({ task }) => {
   const [isEdting, setIsEdting] = useState(false);
+  const dispatch = useContext(TasksDispatchContext);
   let taskContent;
   if (isEdting) {
     taskContent = (
@@ -10,9 +12,12 @@ const Task = ({ task, onDelete, onChange }) => {
         <input
           value={task.text}
           onChange={(e) => {
-            onChange({
-              ...task,
-              text: e.target.value,
+            dispatch({
+              type: "changed",
+              task: {
+                ...task,
+                text: e.target.value,
+              },
             });
           }}
         />
@@ -33,14 +38,23 @@ const Task = ({ task, onDelete, onChange }) => {
         type="checkbox"
         checked={task.done}
         onChange={(e) => {
-          onChange({
-            ...task,
-            done: e.target.checked,
+          dispatch({
+            type: "changed",
+            task: { ...task, done: e.target.checked },
           });
         }}
       />
       {taskContent}
-      <button onClick={() => onDelete(task.id)}>Delete</button>
+      <button
+        onClick={() => {
+          dispatch({
+            type: "deleted",
+            id: task.id,
+          });
+        }}
+      >
+        Delete
+      </button>
     </label>
   );
 };

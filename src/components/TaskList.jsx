@@ -1,11 +1,12 @@
-/* eslint-disable react/prop-types */
 import Task from "./Task";
+import { useTasks } from "../contexts/TaskContexts";
 
-const TaskList = ({tasks,onDelete,onChange}) => {
+const TaskList = () => {
+  const tasks = useTasks()
   return (
     <div>
       <ul>
-        {tasks.map(task => <Task key={task.id} task={task} onDelete={onDelete} onChange={onChange}/>)}
+        {tasks.map(task => <Task key={task.id} task={task}/>)}
       </ul>
     </div>
   );
