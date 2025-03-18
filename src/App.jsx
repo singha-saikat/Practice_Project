@@ -1,5 +1,11 @@
-import TaskApp from "./components/TaskApp.jsx";
+import VideoPlayer from "./components/VideoPlayer";
+
+
 
 export default function App() {
-  return <TaskApp />;
+  return (
+    <>
+      <VideoPlayer/>
+    </>
+  )
 }
