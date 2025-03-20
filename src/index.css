@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box;
 }
@@ -44,18 +48,9 @@ code {
 
 ul {
   padding-inline-start: 20px;
-  display: flex;
-  flex-direction: column-reverse;
 }
 
-button {
-  margin: 5px;
-}
-li {
-  list-style-type: none;
-}
-ul,
-li {
-  margin: 0;
-  padding: 0;
+input {
+  display: block;
+  margin-bottom: 20px;
 }

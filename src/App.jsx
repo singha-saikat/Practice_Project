@@ -1,11 +1,10 @@
-import VideoPlayer from "./components/VideoPlayer";
-
-
+import Commenets from "./components/Comments";
 
 export default function App() {
+  
   return (
     <>
-      <VideoPlayer/>
+      <Commenets postId={2}/>
     </>
-  )
+  );
 }
