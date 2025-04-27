@@ -1,12 +1,25 @@
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom"
+
+import Register from "./pages/Register"
+import Home from "./pages/Home"
+import Login from "./pages/Login"
+import Reset from "./pages/Reset"
 function App() {
 
   return (
-    <>
+    <Router>
      
-      <h1>Vite + React</h1>
+     <div>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register/>} />
+        <Route path="/reset" element={<Reset/>} />
+      </Routes>
+     </div>
       
-    </>
+    </Router>
   )
 }
 
-export default App
+export default App 
